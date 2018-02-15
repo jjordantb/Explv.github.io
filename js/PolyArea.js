@@ -97,14 +97,14 @@ export class PolyArea extends Drawable {
         if (this.positions.length == 0) {
             return "";
         }
-        var output = "Area area = new Area(\n    new int[][]{";
+        var output = "Area area = new Area.Polygonal(\n";
         for (var i = 0; i < this.positions.length; i++) {
-            output += `\n        { ${this.positions[i].x}, ${this.positions[i].y} }`;
+            output += `\n        new Coordinate(${this.positions[i].x}, ${this.positions[i].y}, 0)`;
             if (i !== this.positions.length - 1) {
                 output += ",";
             }
         }
-        output += "\n    }\n)";
+        output += "\n    \n)";
         if (this.positions.length > 0 && this.positions[0].z > 0) {
             output += `.setPlane(${this.positions[0].z})`;
         }
