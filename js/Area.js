@@ -49,10 +49,7 @@ export class Area extends Drawable {
     }
 
     toJavaCode() {
-        var areaDef = `new Area(${this.startPosition.x}, ${this.startPosition.y}, ${this.endPosition.x}, ${this.endPosition.y})`;
-        if (this.startPosition.z > 0) {
-            areaDef += `.setPlane(${this.startPosition.z})`;
-        }
+        var areaDef = `new Area.Rectangular(new Coordinate(${this.startPosition.x}, ${this.startPosition.y}, 0), new Coordinate(${this.endPosition.x}, ${this.endPosition.y}, 0))`;
         return areaDef;
     }
 
