@@ -61,7 +61,7 @@ export class Position extends Drawable {
     }
 
     toJavaCode() {
-        return `Position position = new Position(${this.x}, ${this.y}, ${this.z});`;
+        return `Coordinate coordinate = new Coordinate(${this.x}, ${this.y}, ${this.z});`;
     }
 
     getName() {
